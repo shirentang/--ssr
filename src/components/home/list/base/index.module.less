@@ -1,0 +1,110 @@
+@import "@/assets/css/variables.less";
+
+.base {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  // 标签
+  .meta-container {
+    display: flex;
+    align-items: center;
+
+    .item {
+      position: relative;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      margin: 0 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:not(:last-child)::after {
+        position: absolute;
+        right: -10px;
+        display: block;
+        content: " ";
+        height: 50%;
+        width: 1px;
+        border-right: 1px solid var(--color-neutral-6);
+      }
+    }
+
+    .date {
+      color: var(--color-neutral-6);
+    }
+
+    .tags {
+      position: relative;
+      padding: 0 8px;
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:not(:last-child)::after {
+        position: absolute;
+        right: -1px;
+        display: block;
+        content: " ";
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #4e5969;
+      }
+    }
+  }
+
+  .tag {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    border: 1px solid var(--color-neutral-3);
+    box-sizing: border-box;
+    border-radius: 2px;
+    line-height: 18px;
+    width: 42px;
+    text-align: center;
+    color: var(--color-neutral-6);
+    font-size: 13px;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-neutral-3);
+    margin-top: 10px;
+    width: 100%;
+
+    .main {
+      flex: 1 1 auto;
+      .title {
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--color-neutral-8);
+
+        .text-multi-ellipsis(1);
+      }
+
+      .desc {
+        margin-bottom: 10px;
+        color: var(--color-neutral-6);
+        .text-multi-ellipsis(1);
+      }
+    }
+
+    .img {
+      flex: 0 0 128px;
+    }
+  }
+}

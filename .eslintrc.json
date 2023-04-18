@@ -1,0 +1,6 @@
+{
+  "extends": ["next/core-web-vitals","@antfu"],
+  "rules": {
+    "no-console": "off"
+  }
+}

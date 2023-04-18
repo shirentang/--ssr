@@ -1,0 +1,33 @@
+// glabal variables
+@mainWith: 960px;
+@postWith: 1140px;
+
+@homeContentWidth: 700px;
+@homeSidebarWidth: 240px;
+
+@postContentWidth: 820px;
+@postSidebarWidth: 300px;
+
+// flex 布局
+.normal-flex(@direction: row, @justify: flex-start, @align: flex-start) { 
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+// 单行文本溢出省略号
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文本溢出省略号
+.text-multi-ellipsis(@line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}

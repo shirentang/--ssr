@@ -1,0 +1,30 @@
+.title {
+  font-weight: 500;
+  padding: 15px 0;
+  margin: 0 20px;
+  font-size: 16px;
+  line-height: 2rem;
+  color: var(--color-neutral-8);
+  border-bottom: 1px solid var(--color-neutral-3);
+}
+
+.body {
+  position: relative;
+  margin-right: 2px;
+  max-height: 460px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 80px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #e4e6eb;
+    outline: none;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+    border-radius: 2px;
+  }
+}

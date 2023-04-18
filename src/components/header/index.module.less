@@ -1,0 +1,72 @@
+// components/header/index.module.less
+.wrapper {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--color-bg-1);
+  border-bottom: 1px solid var(--color-neutral-2);
+}
+
+.slide-in{
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-out{
+  top: -60px;
+  transition: all 0.3s ease-in-out;
+}
+
+.header {
+  height: 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  .logo {
+    margin: 0 12px 0 24px;
+
+    .mobile {
+      display: none;
+      width: 31px;
+    }
+  }
+
+  .nav-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    height: 100%;
+    margin: 0;
+
+    .right-side-nav {
+      margin-right: 24px;
+    }
+  }
+}
+
+body[arco-theme='dark'] {
+  .header {
+    .logo {
+      filter: invert(1) hue-rotate(180deg);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    .logo {
+      .logo-img {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
+    }
+  }
+}

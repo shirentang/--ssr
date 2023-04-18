@@ -1,0 +1,121 @@
+.navContainer {
+  height: 100%;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+
+  .navItem {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+    min-width: 28px;
+
+    .navText {
+      display: flex;
+      align-items: center;
+      color: var(--color-text-2);
+    }
+
+    .activeText {
+      color: rgb(var(--primary-6));
+    }
+
+    .tag {
+      position: absolute;
+      top: 5px;
+      left: 7px;
+      z-index: 9;
+      white-space: nowrap;
+      padding: 2px 7px;
+      background-color: #ee502f;
+      border-radius: 50px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 16px;
+      transform: scale(.5);
+      line-height: 18px;
+      color: #fff;
+
+    }
+  }
+
+  .navItem:hover {
+    cursor: pointer;
+    border-bottom: 2px solid rgb(var(--primary-6));
+
+    .navText {
+      color: var(--color-text-1);
+    }
+
+    .activeText {
+      color: var(--color-text-1);
+    }
+    &.noborder {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}
+
+.listContainer {
+  height: 100%;
+}
+
+@media (min-width: 1150px) {
+  .navContainer {
+    flex-direction: row;
+  }
+
+  .navPhone {
+    display: none;
+  }
+}
+
+@media (max-width: 1149px) {
+  .listContainer {
+    display: none;
+  }
+
+  .navContainer {
+    width: 10rem;
+    padding: .67rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-1);
+    box-shadow: 0 8px 24px var(--color-border-2);
+    border: 1px solid var(--color-border-2);
+    border-radius: 4px;
+
+    .navItem {
+      height: 4rem;
+      border-bottom: 2px solid transparent;
+    }
+  }
+
+  .navPhone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 5.66rem;
+    font-size: 1.2rem;
+    color: rgb(var(--primary-6));
+    cursor: pointer;
+
+    .navArrow {
+      height: 0;
+      width: 0;
+      margin-left: .33rem;
+      border: 4px solid transparent;
+      border-top: 5px solid var(--color-text-2);
+      transform: translateY(2.5px);
+      transition: all .1s;
+    }
+
+    .navArrowReversed {
+      border-top: 5px solid rgb(var(--primary-6));
+      transform: translateY(-2.5px) rotateZ(-180deg);
+    }
+  }
+}

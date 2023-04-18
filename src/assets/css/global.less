@@ -1,0 +1,81 @@
+@import "@arco-design/web-react/dist/css/index.less";
+@import './variables.less';
+@import "normalize.css";
+
+html,
+body {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+
+  background-color: #f4f5f5;
+}
+
+body[arco-theme='dark'] {
+  background-color: var(--color-bg-3);
+  color: var(--color-text-1);
+
+  .markdown-body {
+    color: var(--color-text-1);
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--color-neutral-6);
+
+  &:hover {
+    color: rgb(var(--arcoblue-5));
+  }
+}
+
+.markdown-body {
+  overflow-x: hidden;
+  word-break: break-word;
+}
+
+.markdown-body embed, .markdown-body iframe, .markdown-body img:not(.equation), .markdown-body video {
+  max-width: 100% !important;
+  margin: 0;
+}
+
+// wrapper
+.home-wrapper {
+  width: 100%;
+  max-width: @mainWith;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+.post-wrapper {
+  width: 100%;
+  max-width: @postWith;
+  margin: 0 auto;
+  padding-top: 20px;
+  position: relative;
+}
+
+// home sidebar
+.sidebar-block {
+  background-color: var(--color-bg-1);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 1.16rem;
+  line-height: 1.29;
+  color: var(--color-neutral-8);
+}

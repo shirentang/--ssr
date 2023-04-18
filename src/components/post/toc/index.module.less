@@ -1,0 +1,55 @@
+@import "@/assets/css/variables.less";
+
+.catalog-list {
+  position: relative;
+  line-height: 22px;
+  padding: 12px 0;
+  max-height: 460px;
+}
+
+.item {
+  position: relative;
+  padding: 0 0 0 15px;
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--color-neutral-8);
+  cursor: pointer;
+}
+
+.a-container {
+  display: block;
+  position: relative;
+  padding: 0 0 0 12px;
+  .text-multi-ellipsis(1);
+}
+
+.item.active {
+  .a-container::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    margin-top: 7px;
+    width: 4px;
+    height: 16px;
+    background: #1e80ff;
+    border-radius: 0 4px 4px 0;
+  }
+  .catalog-aTag {
+    color: #1e80ff;
+  }
+}
+
+.catalog-aTag {
+  display: inline-block;
+  margin: 5px 8px;
+  padding: 5px 10px;
+  color: inherit;
+  line-height: 22px;
+  .text-multi-ellipsis(1);
+
+  &:hover {
+    border-radius: var(--border-radius-medium);
+    background-color: var(--color-neutral-1);
+  }
+}

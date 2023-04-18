@@ -1,0 +1,61 @@
+@import "@/assets/css/variables.less";
+
+.user {
+  .normal-flex(row, normal, center);
+
+  .link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .avatar {
+      flex: 0 0 auto;
+      width: 3.8rem;
+      height: 3.8rem;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    .userInfo {
+      overflow: hidden;
+
+      .username {
+        font-size: 1.16rem;
+        font-weight: 400;
+        //color: #333;
+        color: var(--color-neutral-8);
+        margin-bottom: 3px;
+
+        .text-multi-ellipsis(1);
+
+        .name {
+          max-width: 128px;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .rank {
+          display: inline-flex;
+          align-items: center;
+          margin-left: 0.33rem;
+          vertical-align: middle;
+
+          img {
+            width: 35px;
+            height: 16px;
+            border-style: none;
+          }
+        }
+      }
+
+      .position {
+        //color: #909090;
+        color: var(--color-neutral-6);
+        font-size: 1rem;
+        margin-bottom: 3px;
+
+        .text-multi-ellipsis(1);
+      }
+    }
+  }
+}
