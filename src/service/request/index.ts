@@ -19,7 +19,7 @@ export class VAxios {
     )
 
     this.instance.interceptors.response.use(
-      res => res,
+      (res) => res,
       error => {
         if(error.response){
           console.log(error.response.status);
