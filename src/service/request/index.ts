@@ -1,5 +1,6 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosRequestConfig } from 'axios'
+import { Message } from '@arco-design/web-react'
 import { DEFAULT_DATA } from './config'
 
 import type { IResponse } from './types'
@@ -19,7 +20,21 @@ export class VAxios {
 
     this.instance.interceptors.response.use(
       res => res,
-      error => Promise.reject(error),
+      error => {
+        if(error.response){
+          console.log(error.response.status);
+          switch(error.response.status){
+            case 401:
+              Message.info("未登录");
+              window.location.href='/'
+              break;
+            default:
+              Message.info("未知错误")
+          }
+        }    
+        
+        return Promise.reject(error)
+      },
     )
   }
 
